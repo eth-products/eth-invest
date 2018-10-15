@@ -1,0 +1,20 @@
+{
+  "name": "eth-invest",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "ethInvest"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/eth-products/eth-invest",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
