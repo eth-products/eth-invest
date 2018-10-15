@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/eth-products/eth-invest/issues"
   },
-  "homepage": "https://github.com/eth-products/eth-invest#readme"
+  "homepage": "https://github.com/eth-products/eth-invest#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "sass": "^1.14.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
 }
