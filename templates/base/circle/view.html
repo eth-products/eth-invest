@@ -1,0 +1,10 @@
+<div ng-if="$ctrl.type === 'line'" ng-class="[$ctrl.side]" class="circle-animate-element">
+  <div class="circle-animate-element-line">
+    <div class="circle-animate-element-circle"></div>
+  </div>
+</div>
+
+<div ng-if="$ctrl.type === 'circle'" class="circle-animate-element">
+  <div ng-repeat="el in $ctrl.elements" class="circle-animate-element-circle-rand-position" ng-style="el.style"
+       id="circle-animate-idx-{{$ctrl.id}}-{{el.idx}}"></div>
+</div>

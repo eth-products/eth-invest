@@ -1,0 +1,18 @@
+<div class="eth-invest-table-component transaction-table-cover">
+  <table>
+    <thead>
+    <tr>
+      <td ng-repeat="itemHead in $ctrl.data.heads">
+        <div class="transaction-table-column" ng-bind="itemHead"></div>
+      </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in $ctrl.data.body">
+      <td ng-repeat="td in item">
+        <div class="transaction-table-column" ng-bind-html="(td + '') | trustHtml"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

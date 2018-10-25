@@ -1,1 +1,0 @@
-let ethApp = angular.module('ethApp', []);

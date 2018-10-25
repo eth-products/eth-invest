@@ -1,0 +1,8 @@
+<header class="header-page">
+  <div class="inline-block">
+    <img ng-src="{{ 'logo-eth' | backgroundSectionUrl:'img' }}" alt="logo-eth">
+  </div>
+  <ul style="float: right">
+    <li ng-repeat="menuItem in $ctrl.menu"><a ng-href="#{{menuItem.id}}" ng-bind="menuItem.name"></a></li>
+  </ul>
+</header>

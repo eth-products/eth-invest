@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EthInvest</title>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+  <link rel="stylesheet" href="bower/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body ng-app="ethApp" ng-controller="MainController">
+
+<div ng-if="!loaded" class="eth-loader" id="eth-app-loader">
+  <div class="eth-loader-block">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="loader-text">загрузка</div>
+  </div>
+</div>
+
+<div ng-if="loaded">
+  <main-component></main-component>
+</div>
+
+
+<!--<div class="eth-img-block-container">-->
+<!--<div id="eth-img-block">-->
+<!--</div>-->
+<!--</div>-->
+
+<script src="bower/angular/angular.min.js"></script>
+<script src="bower/lodash/dist/lodash.min.js"></script>
+<script src="scripts/lottie.js"></script>
+<script src="scripts/Chart.min.js"></script>
+<script src="scripts/angular-chart.min.js"></script>
+<script src="scripts/all.js"></script>
+</body>
+</html>
