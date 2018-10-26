@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body ng-app="ethApp" ng-controller="MainController">
-
-<div ng-if="!loaded" class="eth-loader" id="eth-app-loader">
+<div ng-if="!loaded || spinner" class="eth-loader" id="eth-app-loader">
   <div class="eth-loader-block">
     <div class="lds-ellipsis">
       <div></div>
