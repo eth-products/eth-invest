@@ -1,1 +1,18 @@
-{"balance":0.174,"startDate":1540567387000,"ethPrice":202.699867599,"investCount":1,"latestTransactions":[{"val":0.2,"who":"0x7d544cF03152eead818cD1bFEe63E41e58508D40","date":"2018-10-26T15:27:09.000Z","type":"invest"}],"sumList":[0,0.2]}
+{
+  "balance": 0.174,
+  "startDate": 1540567387000,
+  "ethPrice": 202.699867599,
+  "investCount": 1,
+  "latestTransactions": [
+    {
+      "val": 0.2,
+      "who": "0x7d544cF03152eead818cD1bFEe63E41e58508D40",
+      "date": "2018-10-26T15:27:09.000Z",
+      "type": "invest"
+    }
+  ],
+  "sumList": [
+    0,
+    0.2
+  ]
+}
