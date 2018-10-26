@@ -4,25 +4,25 @@
       <li>
         <div>
           <img ng-src="{{ 'info-icon-days' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="10 | number:0"></b> <span>Дней</span> <br> с запуска</div>
+          <div><b ng-bind="$ctrl.data.startDate | number:0"></b>-й <span>День</span> <br> с запуска</div>
         </div>
       </li>
       <li>
         <div>
           <img ng-src="{{ 'info-icon-1' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="11234324 | number:0"></b> <span>ETH</span> <br> Собрано</div>
+          <div><b ng-bind="$ctrl.data.balance | number:0"></b> <span>ETH</span> <br> Баланс</div>
         </div>
       </li>
       <li>
         <div>
           <img ng-src="{{ 'info-icon-2' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="11234324 | number:0"></b><br> <span>USD</span></div>
+          <div><b ng-bind="$ctrl.data.balance * $ctrl.data.ethPrice | number:0"></b>$<br> <span>USD</span></div>
         </div>
       </li>
       <li>
         <div>
           <img ng-src="{{ 'info-icon-3' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="11234324 | number:0"></b> <br><span>Вкладчиков</span></div>
+          <div><b ng-bind="$ctrl.data.investCount | number:0"></b> <br><span ng-bind="{number: $ctrl.data.investCount, words: ['Вкладчик', 'Вкладчика', 'Вкладчиков']} | declWordsFilter"></span></div>
         </div>
       </li>
     </ul>
