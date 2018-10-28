@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body ng-app="ethApp" ng-controller="MainController">
-
-<div ng-if="!loaded" class="eth-loader" id="eth-app-loader">
+<div ng-if="!loaded || spinner" class="eth-loader" id="eth-app-loader">
   <div class="eth-loader-block">
     <div class="lds-ellipsis">
       <div></div>
@@ -21,10 +20,43 @@
     <div id="loader-text">загрузка</div>
   </div>
 </div>
-
+<h2 style="opacity: 0;position: absolute;left: -999px">Eth-invest, получайте дивиденды с криптовалюты</h2>
+<p style="opacity: 0;position: absolute;left: -999px">
+  Проект по распределению криптовалюты, получайте пожизненные дивиденды со своих инвестиций, с гарантией.
+  Мы запустили контракт, который возвращает 3% от инвестиций каждый день.
+</p>
 <div ng-if="loaded">
   <main-component></main-component>
 </div>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+  (function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+      try {
+        w.yaCounter50890154 = new Ya.Metrika2({
+          id:50890154,
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+        });
+      } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+    if (w.opera == "[object Opera]") {
+      d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+  })(document, window, "yandex_metrika_callbacks2");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/50890154" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 <script src="bower/angular/angular.min.js"></script>
 <script src="bower/lodash/dist/lodash.min.js"></script>
