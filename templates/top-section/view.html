@@ -1,34 +1,27 @@
 <div style="position: relative;">
   <div class="header-and-top-section-container">
     <div class="lang-button">
-      RU
+      <div class="lang-button-current-lang" ng-click="$ctrl.toogleLang = !$ctrl.toogleLang">
+        {{$ctrl.currentLang}}
+      </div>
+      <ul class="lang-button-list" ng-if="$ctrl.toogleLang">
+        <li ng-repeat="lang in $ctrl.languages" ng-click="$ctrl.changeLang(lang)" ng-bind="lang"></li>
+      </ul>
     </div>
-    <div class="description-eth-invest">
-      <h3>Проект по доходу криптовалюты <br> ETH с
-        <a ng-href="https://etherscan.io/address/{{$ctrl.addr}}#code" target="_blank" class="description-eth-invest-link">Открытым исходным кодом</a></h3>
-      <br>
-      <h3>8% в день! 120% за 15 дней</h3>
-    </div>
-    <div class="description-eth-invest-more">
-      Инвестируй и зарабатывай! <br>
-      Получай дивиденды каждый час! <br>
-      <b>1 ETH</b> => <b>1.2 ETH</b> уже через <b>15 дней</b>
-      <a href="#how-section-top" class="eth-invest-more-btn">
-        Вложить ETH
-      </a>
-    </div>
+    <div class="description-eth-invest" ng-bind-html="'top-section-description-with-code' | translateFilter: $ctrl.langs"></div>
+    <div class="description-eth-invest-more" ng-bind-html="'top-section-description-more-information' | translateFilter: $ctrl.langs"></div>
     <ul class="block-with-icons">
       <li><img ng-src="{{ 'top-icon-1' | backgroundSectionUrl:'img' }}" alt="">
-        <div>Минимальный риск <br> 120% за 15 дней</div>
+        <div ng-bind-html="'top-section-description-info-list-min-risk' | translateFilter: $ctrl.langs"></div>
       </li>
       <li><img ng-src="{{ 'top-icon-2' | backgroundSectionUrl:'img' }}" alt="">
-        <div>Гарантия выплат <br> обеспечена контрактом</div>
+        <div ng-bind-html="'top-section-description-info-list-guaranteed' | translateFilter: $ctrl.langs"></div>
       </li>
       <li><img ng-src="{{ 'top-icon-3' | backgroundSectionUrl:'img' }}" alt="">
-        <div>Вклад от <br><b>0.01</b> ETH</div>
+        <div ng-bind-html="'top-section-description-info-list-min-invest' | translateFilter: $ctrl.langs"></div>
       </li>
       <li><img ng-src="{{ 'top-icon-4' | backgroundSectionUrl:'img' }}" alt="">
-        <div>Реферальная <br> Программа <b>4%</b></div>
+        <div ng-bind-html="'top-section-description-info-list-ref-program' | translateFilter: $ctrl.langs"></div>
       </li>
     </ul>
     <div class="eth-logo-animate">

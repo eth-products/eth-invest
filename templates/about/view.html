@@ -3,15 +3,7 @@
   <circle-component type="'circle'" id="'about-section'"></circle-component>
 
   <div class="container section-container" id="about-section">
-    <div class="about-cover">
-      <h3 class="mb-default-half">О фонде</h3>
-      <p>
-        Контракт запущен в блокчейне <a href="https://www.ethereum.org">Ethereum</a>.
-        Переписать конткракт или как-нибудь его изменить уже <b>невозможно</b>.
-        Инвестируйте и зарабатывайте, выплаты <b>24 раза</b> в сутки, <b>0.33%</b> каждый час.
-        Реферальная программа <b>4%</b> Вам, <b>+2%</b> к депозиту приглашенного. Вы не можете заработать больше чем <b>120%</b>.
-      </p>
-    </div>
+    <div class="about-cover"  ng-bind-html="'about-section-description' | translateFilter: $ctrl.langs"></div>
     <div class="about-icon-animate">
       <icon-animate-component name="'about'" id="'about-section'"></icon-animate-component>
     </div>

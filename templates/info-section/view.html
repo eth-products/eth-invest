@@ -4,13 +4,13 @@
       <li>
         <div>
           <img ng-src="{{ 'info-icon-days' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="$ctrl.data.startDate | number:0"></b>-й <span>День</span> <br> с запуска</div>
+          <div><b ng-bind="$ctrl.data.startDate | number:0"></b><span ng-bind-html="'info-section-count-of-days' | translateFilter: $ctrl.langs"></span></div>
         </div>
       </li>
       <li>
         <div>
           <img ng-src="{{ 'info-icon-1' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="$ctrl.data.balance | number:0"></b> <span>ETH</span> <br> Баланс</div>
+          <div><b ng-bind="$ctrl.data.balance | number:0"></b> <span>ETH</span> <br> <span ng-bind-html="'info-section-balance' | translateFilter: $ctrl.langs"></span></div>
         </div>
       </li>
       <li>
@@ -22,7 +22,10 @@
       <li>
         <div>
           <img ng-src="{{ 'info-icon-3' | backgroundSectionUrl:'img' }}" alt="">
-          <div><b ng-bind="$ctrl.data.investCount | number:0"></b> <br><span ng-bind="{number: $ctrl.data.investCount, words: ['Вкладчик', 'Вкладчика', 'Вкладчиков']} | declWordsFilter"></span></div>
+          <div><b ng-bind="$ctrl.data.investCount | number:0"></b> <br>
+            <span ng-if="$ctrl.lang === 'RU'" ng-bind="{number: $ctrl.data.investCount, words: ['Вкладчик', 'Вкладчика', 'Вкладчиков']} | declWordsFilter"></span>
+            <span ng-if="$ctrl.lang === 'EN'" ng-bind="{number: $ctrl.data.investCount, words: ['Contributor', 'Contributors', 'Contributors']} | declWordsFilter"></span>
+          </div>
         </div>
       </li>
     </ul>
