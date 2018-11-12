@@ -397,7 +397,8 @@ ethApp.component("infoSectionComponent", {
     });
 
     $ctrl.$onInit = function () {
-      $ctrl.data = $rootScope.loadedData.json['data'].file;
+      $ctrl.data = angular.copy($rootScope.loadedData.json['data'].file);
+      $ctrl.data.balance = $ctrl.data.balance.toFixed(2);
       var now = new Date();
       var startDate = new Date($ctrl.data.startDate);
       var diff = Math.abs(startDate.getTime() - now.getTime());
@@ -415,6 +416,8 @@ ethApp.component("investComponent", {
     $ctrl.$onInit = function () {
       $ctrl.addr = $rootScope.addr;
     };
+
+    $ctrl.langs = $rootScope.langs;
   }]
 });
 "use strict";
@@ -608,7 +611,9 @@ ethApp.run(["$rootScope", function ($rootScope) {
       "about-section-description": "<h3 class='mb-default-half'>О фонде</h3><p>Контракт запущен в блокчейне <a href='https://www.ethereum.org'>Ethereum</a>. Переписать конткракт или как-нибудь его изменить уже <b>невозможно</b>. Инвестируйте и зарабатывайте, выплаты <b>24 раза</b> в сутки, <b>0.33%</b> каждый час. Реферальная программа <b>4%</b> Вам, <b>+2%</b> к депозиту приглашенного. Вы не можете заработать больше чем <b>120%</b>.</p>",
       // info section
       "info-section-count-of-days": "-й <span>День</span> <br> с запуска",
-      "info-section-balance": "balance"
+      "info-section-balance": "Баланс",
+      // Invest section
+      "invest-section-description": "<h3 class='mb-default-half'>Вложения в проект</h3><p>Для осуществления вклада в проект достаточно перечислить минимум <b>0.01 ETH</b> с вашего ETH кошелька* на адрес <a ng-href ='https://etherscan.io/address/" + $rootScope.addr + "' target='_blank'>смарт-контракта</a>. Блокчейн запомнит адрес кошелька, с которого был сделан вклад и автоматически, каждый час с момента вклада или с последнего удачного списания накопленного процента, будет производить начисления в ETH вкладчикам, пока в фонде для выплат есть средства. Размер начислений составляет <b>8%</b>. <br><span class='text-warning'>Не используйте биржи.</span><span class='text-warning'> Gas лимит: <b>200000</b>. Gas price можно посмотреть <a href='https://ethgasstation.info/' target='_blank'>здесь</a>. </span></p>"
     },
     "EN": {
       // menu section
@@ -628,7 +633,9 @@ ethApp.run(["$rootScope", function ($rootScope) {
       "about-section-description": "<h3 class = 'mb-default-half'> About the Fund </h3> <p> The contract was launched in the <a href='https://www.ethereum.org'> Ethereum </a> blockchain. Rewrite the contract or somehow change it is already <b> impossible </b>. Invest and earn payout <b> 24 times </b> per day, <b> 0.33% </b> every hour. Referral program <b> 4% </b> to you, <b> +2% </b> to the deposit of the invitee. You cannot earn more than <b> 120% </b>. </p>",
       // info section
       "info-section-count-of-days": " <span>Day</span> <br> from launch",
-      "info-section-balance": "Balance"
+      "info-section-balance": "Balance",
+      // Invest section
+      "invest-section-description": "<h3 class = 'mb-default-half'> Investing in the project </h3> <p> To contribute to the project, it’s enough to transfer a minimum of <b> 0.01 ETH </b> from your ETH wallet * to <a ng-href ='https://etherscan.io/address/" + $rootScope.addr + "' target = '_ blank'> smart contract </a>. The blockchain will remember the address of the wallet from which the deposit was made and automatically, every hour from the moment of the deposit or from the last successful write-off of the accrued interest, will accrue to ETH depositors as long as there are funds in the payout fund. Charges are <b> 8% </b>. <br> <span class = 'text-warning'> Do not use exchanges. </span> <span class = 'text-warning'> Gas limit: <b> 200000 </b>. Gas price can be found <a href='https://ethgasstation.info/' target='_blank'> here </a>. </span> </p>"
     }
   };
 }]);
